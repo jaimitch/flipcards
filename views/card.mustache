@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Flip Card Game</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+<body class="container-div">
+    <div class="form-wrapper-left">
+        <a class='buttons vertical-text' href="/api/decks">Dashboard</a>
+    </div>
+    <div class="form-wrapper-center">
+        <form method="GET" action="/api/decks/{{deck.id}}/start">
+            <button class="buttons" type="submit">Next</button>
+        </form>
+    </div>
+    <div class="form-wrapper-center">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    {{card.question}}
+                </div>
+                <div class="back">
+                    {{card.answer}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-wrapper-center">
+        <form method="POST" action="/api/decks/{{deck.id}}/{{card.cardId}}/incorrect">
+            <button class="buttons" type="submit">Incorrect?</button>
+        </form>
+        <form method="POST" action="/api/decks/{{deck.id}}/{{card.cardId}}/correct">
+            <button class="buttons" type="submit">Correct?</button>
+        </form>
+    </div>
+</body>
+
+</html>

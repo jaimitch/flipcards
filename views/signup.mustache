@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up to Play</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>SIGN UP</h1>
+        <p class='center-text'>{{message}}</p>
+
+        <form class="form-wrapper" method="POST" action="/api/signup">
+            <div class='form-wrapper-center'>
+                <input class="inputs" type="text" name="email" placeholder="Email:">
+                <input class="inputs" type="password" name="password" placeholder="Password:">
+            </div>
+            <div class='form-footer'>
+                <button class="button click-btn" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>    
+</body>
+</html>

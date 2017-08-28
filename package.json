@@ -1,0 +1,25 @@
+{
+  "name": "flipCards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "crypto": "^1.0.1",
+    "express": "^4.15.4",
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
+    "mongoose": "^4.11.8",
+    "mustache-express": "^1.2.5",
+    "pg": "^7.2.0",
+    "sequelize": "^4.7.5"
+  }
+}

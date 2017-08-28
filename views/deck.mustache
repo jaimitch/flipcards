@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flip Card Game</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="form-wrapper-right container-div">
+        <div class="form-wrapper-left">
+            <a class='buttons vertical-text' href="/api/decks">Dashboard</a>
+        </div>
+        <form method="POST" action="/api/logout">
+            <button class="button click-btn" type="submit">Logout</button>
+        </form>
+    </div>
+    <h2 class="center-text-large">{{data.name}}</h2>
+
+    <div class="form-wrapper-center">
+        <form method="POST" action="/api/decks/{{data.id}}">
+            <input class="inputs" type="text" name="question" placeholder="Question">
+            <input class="inputs" type="text" name="answer" placeholder="Answer">
+    </div>
+    <div class="form-wrapper-center">
+        <button class="buttons" type="submit">Submit New Card</button>
+        </form>
+    </div>
+
+    {{#data.cards}}
+    <div class="form-wrapper-center">
+        <form method="POST" action="/api/decks/{{data.id}}/update/{{cardId}}">
+            <input class="inputs" type="text" name="question" value="{{question}}">
+            <input class="inputs" type="text" name="answer" value="{{answer}}">
+    </div>
+    <div class="form-wrapper-center">
+        <button class="buttons" type="submit">Update Card</button>
+        </form>
+    
+        <form method="POST" action="/api/decks/{{data.id}}/delete/{{cardId}}">
+            <button class="buttons" type="submit">Delete Card</button>
+        </form>
+    </div>
+    {{/data.cards}}
+    </body>
+</html>
